@@ -1,0 +1,287 @@
+english:français
+beloved:bien-aimé
+besides:excepté
+flaw:défaut
+clumsy:maladroit
+clumsiness:maladresse
+naughty:vilain
+diligent:assidu
+wise:judicieux
+degree:diplôme
+to attend:assister
+to feed:nourrir
+to emphasise:insister
+led to:dirigé
+relief:soulagement
+appointment:rendz-vous
+overwhelm:submerger
+pleas:demandes
+to garner:recueillir
+to involve:impliquer
+whether:si
+guilty:coupable
+flock:troupeau
+feather:plume
+gorgeous:magnifique
+to deal with:gérer
+council:conseil
+neglected:négligé
+to pursue:poursuivre
+somehow:d'une manière ou d'une autre
+treats:plaisirs
+to unleash:déchaîner
+trainee:stagiaire
+cushions:coussins
+sustainability:durabilité
+cashier:caissier
+serveur:waiter
+freebies:cadeaux
+to apply:candidater
+delivery:livraison
+duties:devoirs
+orders:commandes
+change:monnaie
+shelf:étagère
+lift:ascenceur
+ropes:cordes
+wage:salaire
+to supply:fournir
+to sneeze:éternuer
+hammer:marteau
+to borrow:emprunter
+to start off:débuter
+to claim:prétendre
+evidence:preuve
+fogg:brouillard
+to manage:réussir
+moody:lunatique
+scallops:coquilles Saint Jacques
+wild boar:sanglier
+to quarrel:se disputer
+to knit:tricoter
+to twist:tordre
+ankle:cheville
+to entertain:divertir
+extracurricular:extrascolaire
+jocks:athlètes
+to fit in:faire parti de
+to hang out:traîner
+besides:excepté
+relish:condiment
+ham:jambon
+gross:grossier
+harvest:récolte
+gathring:rassemblement
+fixture:rencontre
+to flee:fuir
+ungodly:impie
+to seek:aspirer à
+fowl:volaille
+staple:incontournable
+pastries:patisseries
+cattle:bétail
+dairy:laitier
+lobster:homard
+venison:gibier
+to warrant:cautionner
+to lead to:engendrer
+whatever:peu importe
+rescheduling:report
+demande:enquiry
+apology:excuse
+recipient:destinataire
+threats:menaces
+to stand up to:résister
+to register:s'inscrire
+layout:disposition
+to look up:vérifier
+to worry:s'inquiéter
+subjects:matières scolaires
+day off:jour de congé
+woodcut:gravure sur bois
+cupboards:armoires
+exhausted:épuisé
+so far:jusqu'ici
+aches:douleurs
+nappies:couches
+to drpo:baisser
+numb:engourdi
+aware:conscient
+to crave:désirer
+gambling:jeu
+fidèle:faithful
+stupide:silly
+curtains:rideaux
+to look for:chercher
+sightseeing:tourisme
+relatives:membres de la famille
+to hike:randonner
+to pass an exam:réussir un examen
+to sit for an exam:passer un examen
+to take an exam:passer un examen
+term:trimestre
+carpet:tapis
+cheeky:insolent
+selfish:égoïste
+alert:vigilant
+alluring:séduisant
+boundless:inépuisable
+bright:brillant
+dazzling:éblouissant
+decorous:digne
+delightful:ravissant
+diligent:assidu
+eager:désireux
+enchanting:charmant
+fearless:intrépide
+gentle:doux
+industrious:travailleur
+knowledgeable:cultivé
+jolly:jovial
+lively:gai
+painstaking:minutieux
+righteous:juste
+sedate:calme
+shrewd:astucieux
+thoughtful:attentionné
+thrifty:économe
+trustworthy:digne de confiane
+unbiased:impartial
+upbeat:optimiste
+vivacious:vivace
+willing:volontaire
+wise:sage
+zany:farfelu
+abrupt:brusque
+aloof:réservé
+annoyed:contrarié
+awful:horrible
+belligerent:agressif
+callous:impitoyable
+careless:négligent
+cowardly:lâche
+deceitful:déloyal
+disturbed:perturbé
+erratic:irrégulier
+fierce:féroce
+finicky:méticuleux
+foolish:ridicule
+frantic:frénétique
+frightened:effrayé
+grouchy:grincheux
+gruesome:effroyable
+guarded:prudent
+gullible:crédule
+helpless:impuissant
+hurtful:nuisible
+lacking:manquant
+nasty:méchant
+obnoxious:odieux
+outrageous:scandaleux
+secretive:mystérieux
+spendthrift:dépensier
+stingy:avare
+wary:méfiant
+engine:moteur
+to rely on:faire confiance
+rainforest:forêt tropicale
+to overtake:dépasser
+tip:pourboire
+arsonist:pyromane
+to spur:inciter
+rampage:déchaînement
+abridged:abrégé
+beacon:phare
+to sear:brûler
+to cripple:paralyser
+manacles:menottes
+devotees:passionés
+lodging:hébergement
+to strip:dépouiller
+stream:torrent
+unmindful:inattentif
+trials:procès
+narrow:étroit
+to stagger:tituber
+faith:foi
+unearned:immérité
+slums:bidonvilles
+to wallow:croupir
+despair:désespoir
+to rise up:se lever
+hills:collines
+sweltering:étouffant
+to drip:dégouliner
+crooked:tordu
+rough:rugueux
+flesh:chair
+to struggle:lutter
+hilltop:butte
+hamlet:hameau
+forceful:percutant
+to slay:tuer
+to deter:dissuader
+to withhold:refuser
+to to step in:intervenir
+to water:arroser
+slot:fente
+further:supplémentaire
+restrooms:toilettes
+lawyer:avocat
+to persuade:persuader
+to deliver:prononcer
+widow:veuve
+to provide:fournir
+I'd rather not:je ne préférerais pas
+sewing:couture
+scheme:projet
+premises:locaux
+to resign:démissionner
+accountant:comptable
+to hire:embaucher
+on strike:en grève
+to gather:rassembler
+duty:devoir
+elderly:âgé
+to lend:prêter
+to spill:renverser
+chores:corvées
+complaint:plainte
+cough:toux
+to fit:correspondre
+lungs:poumons
+stained:tâché
+simile:comparaison
+ashamed:honteux
+deputy:adjoint
+to stink:puer
+refund:remboursement
+thus:donc
+therefore:par conséquent
+to meet the deadlines:respecter les délais
+arguments:disputes
+to sweat:transpirer
+to handle:gérer
+harmful:nocif
+kite:cerf-volant
+landlord:propriétaire
+bagpipe:cornemuse
+statement:affirmation
+failure:échec
+soldes:sales
+sécheresse:drought
+to develop:développer
+to settle down:s'installer
+firmly:fermement
+snail:escargot
+heavily:fortement
+to join forces:s'associer
+concurrence:rivalry
+commited:engagé
+proficient:compétent
+sailor:marin
+to further:élargir
+expenditures:dépenses
+to purchase:acheter
+reckless:imprudent
+puzzlement:étonnement
