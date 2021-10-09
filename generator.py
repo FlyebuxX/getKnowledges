@@ -3,8 +3,7 @@
 # ======================================================================================================================
 
 
-from englishClass import English
-from germanClass import German
+from paths import Path
 import random
 # ======================================================================================================================
 # CLASS
@@ -19,13 +18,16 @@ class Generator:
     def __init__(self, language, gamemode):
         self.lang = language
         self.gamemode = gamemode
-
         self.path = language + "Package"
 
-        self.WORDS_LIST = open(self.path + "/words.txt")
-        self.in_progress_list = open(self.path + "/inProgressWords.txt")
-        self.acquired_words = open(self.path + "/acquiredWords.txt")
-        self.french_words = open(self.path + "/frenchWords.txt")
-        self.english_words = open(self.path + "/englishWords.txt")
+    def paths(self):
+        """
+        Paths function
+        """
+        new_path = Path()
 
-
+        self.words_list = new_path.words_list()
+        self.in_progress_list = new_path.in_progresss_list()
+        self.acquired_words = new_path.acquired_words()
+        self.foreign_words = new_path.foreign_words(self.lang)
+        self.french_words = new_path.french_words()
