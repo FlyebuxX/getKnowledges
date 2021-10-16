@@ -15,29 +15,24 @@ class Method:
     Methods which can useful to deal with files
     """
 
-    def __init__(self, file_name):
+    def __init__(self, file_name, path):
         self.file = file_name
+        self.path = path
 
-    def open_file(self):
+    def add_in_file(self, toWrite):
         """
-        Opening file
-        :return file:
+        Adding in a file
+        :return:
         """
-        file = open(self.file, "r", encoding="utf-8")
-        return file
+        file = open(self.path + "/" + self.file + "\n", "a", encoding="utf-8")
+        file.write(toWrite)
+        file.close()
 
-    def read_file(self):
+    def write_in_file(self, toWrite):
         """
-        Reading file
-        :return file:
+        Writing in a file
+        :return:
         """
-        file = self.file.readlines()
-        return file
-
-    def close_file(self):
-        """
-        Closing file
-        :return file:
-        """
-        file = self.file.close()
-        return file
+        file = open(self.path + "/" + self.file + "\n", "r", encoding="utf-8")
+        file.write(toWrite)
+        file.close()
