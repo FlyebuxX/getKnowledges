@@ -11,7 +11,8 @@ degree:diplôme
 to attend:assister
 to feed:nourrir
 to emphasise:insister
-led to:dirigé
+lead to:mener à
+led:mené
 relief:soulagement
 appointment:rendz-vous
 overwhelm:submerger

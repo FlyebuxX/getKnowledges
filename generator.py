@@ -33,7 +33,7 @@ class Generator:
     def files(self):
         """
         """
-        self.words_list = loadings.file_loading(self.words_list)
+        self.words_list = loadings.words_list_file_loading(self.words_list)
         self.in_progress_list = loadings.file_loading(self.in_progress_list)
         self.acquired_words = loadings.file_loading(self.acquired_words)
         self.foreign_words = loadings.file_loading(self.foreign_words)
@@ -61,7 +61,7 @@ class Generator:
         :param toWrite: new to add
         """
         obj = methods.Method("inProgressWords.txt", self.path)
-        obj.add_in_file(toWrite)
+        obj.add_in_file(toWrite + "\n")
 
     def add_acquired_file_writing(self, toWrite):
         """
@@ -69,7 +69,7 @@ class Generator:
         :param toWrite: new to add
         """
         obj = methods.Method("acquiredWords.txt", self.path)
-        obj.add_in_file(toWrite)
+        obj.add_in_file(toWrite + "\n")
 
     def delete_in_progress_file(self, guessed_word):
         """
@@ -80,6 +80,46 @@ class Generator:
 
         obj = methods.Method("inProgressWords.txt", self.path)
         obj.write_in_file(new_progress_list)
+
+        return new_progress_list
+
+    def answers_counter(self, word_to_guess, learning_statut):
+        """
+        Count right / wrong answers
+        :param word_to_guess: word to guess, str
+        :param learning_statut: bool
+        """
+        in_progress_words = [elt.split(" ")[0] for elt in self.in_progress_list ]
+        in_progress_count = [elt.split(" ")[-1] for elt in self.in_progress_list]
+
+        if word_to_guess in in_progress_words:  # if the word has already been proposed
+            index = in_progress_words.index(word_to_guess)
+
+            if learning_statut:  # if the translation is correct
+                in_progress_count[index] = str(int(in_progress_count[index]) + 1)
+
+                if int(in_progress_count[index]) == 10:
+                    self.add_acquired_file_writing(word_to_guess)
+                    self.delete_in_progress_file(word_to_guess)
+
+                else:
+                    self.add_in_progress_file_writing(in_progress_words[index] + " " + in_progress_count[index])
+
+            else:
+                in_progress_count[index] = str(int(in_progress_count[index][1]) - 1)
+                self.add_in_progress_file_writing(in_progress_words[index] + " " + in_progress_count[index])
+
+            print("(" + str(int(in_progress_count[index])) + " / 10)")
+
+
+        else:  # if the word is proposed for the first time
+            if learning_statut:
+                new_word = word_to_guess + " " + "1"
+                print("(1 / 10)")
+            else:
+                new_word = word_to_guess + " " + "-1"
+                print("(-1 / 10)")
+            self.add_in_progress_file_writing(new_word)
 
 
 # ======================================================================================================================

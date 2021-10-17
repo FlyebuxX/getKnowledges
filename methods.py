@@ -24,7 +24,7 @@ class Method:
         Adding in a file
         :return:
         """
-        file = open(self.path + "/" + self.file + "\n", "a", encoding="utf-8")
+        file = open(self.path + "/" + self.file, "a", encoding="utf-8")
         file.write(toWrite)
         file.close()
 
