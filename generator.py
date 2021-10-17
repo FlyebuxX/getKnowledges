@@ -32,6 +32,7 @@ class Generator:
 
     def files(self):
         """
+        Updating files
         """
         self.words_list = loadings.words_list_file_loading(self.words_list)
         self.in_progress_list = loadings.file_loading(self.in_progress_list)
@@ -120,13 +121,3 @@ class Generator:
                 new_word = word_to_guess + " " + "-1"
                 print("(-1 / 10)")
             self.add_in_progress_file_writing(new_word)
-
-
-# ======================================================================================================================
-# MAIN
-# ======================================================================================================================
-
-
-gen = Generator("english", "english")
-gen.files()
-
