@@ -3,26 +3,24 @@
 # ======================================================================================================================
 
 
-import paths
-import loadings
-import methods
 import generator
 # ======================================================================================================================
 # FUNCTIONS
 # ======================================================================================================================
 
+
 def main_interface():
     """
     Main interface
-    :return language: language choosen, str
-    :return gamamode: gamemode choosen, str
+    :return language: language, str
+    :return game_mode: game_mode, str
     """
 
-    language  = input(
+    language = input(
         "Langue : Allemand (german) ou Anglais (english)"
     )
 
-    if language.lower() != "alld" and language.lower() != "gb":
+    if language.lower() != "german" and language.lower() != "english":
 
         while True:
             print("Merci de saisir un mode de jeu valide\n")
@@ -30,23 +28,23 @@ def main_interface():
                 "Langue : Allemand (german) ou Anglais (english)"
             )
 
-            if language.lower() == "alld" or language.lower() == "gb":
+            if language.lower() == "german" or language.lower() == "english":
                 break
 
-    gamemode = input("En langue " + language + " mode : " + language + " ou french")
+    game_mode = input("En langue " + language + " mode : " + language + " ou french")
 
-    if gamemode.lower() != language and gamemode.lower() != "fr":
+    if game_mode.lower() != language and game_mode.lower() != "french":
 
         while True:
             print("Merci de saisir un mode de jeu valide\n")
-            gamemode = input(
+            game_mode = input(
                 "En langue " + language + " mode : " + language + " ou french"
             )
 
-            if gamemode.lower() == "alld" or gamemode.lower() == "gb":
+            if game_mode.lower() == "alld" or game_mode.lower() == "gb":
                 break
 
-    return language, gamemode
+    return language, game_mode
 
 
 def translation(lang, word):
@@ -59,25 +57,27 @@ def translation(lang, word):
     if lang == "french":
         word_proposed = input("Quelle est la traduction de " + word[0] + "?")
         if word_proposed == word[1]:
-            learning_statut = True
+            learning_status = True
             print("Correct ! La traduction de", word[0], "est bien", word[1])
         else:
-            print("Faux ! La traduction de", word[0], "est", word[1], "et non pas", word)
+            learning_status = False
+            print("Faux ! La traduction de", word[0], "est", word[1], "et non pas", word_proposed)
 
-        return word[0], learning_statut
+        return word[0], learning_status
 
     else:
         word_proposed = input("Quelle est la traduction de " + word[1] + "?")
         if word_proposed == word[0]:
-            learning_statut = True
+            learning_status = True
         else:
-            print("Faux ! La traduction de", word[1], "est", word[0], "et non pas", word)
+            learning_status = False
+            print("Faux ! La traduction de", word[1], "est", word[0], "et non pas", word_proposed)
             print("Correct ! La traduction de", word[1], "est bien", word[0])
 
-        return word[1], learning_statut
+        return word[1], learning_status
 
 
-def generator(lang, mode):
+def gen(lang, mode):
     """
     Generates a new object
     :param lang: str
@@ -87,6 +87,19 @@ def generator(lang, mode):
     obj.files()
     word_to_guess = obj.choose_word()
 
+    TRANSLATE = translation(user_info[1], word_to_guess)
+    obj.answers_counter(TRANSLATE[0], TRANSLATE[1])
+
+    while True:
+        play_again = input("\nSouhaitez vous continuer ? (y/n)")
+        if play_again.lower() == "y":
+            word_to_guess = obj.choose_word()
+            TRANSLATE = translation(user_info[1], word_to_guess)
+            obj.answers_counter(TRANSLATE[0], TRANSLATE[1])
+        else:
+            print("\nMerci d'avoir particpé, à bientôt !")
+            break
+
 
 # ======================================================================================================================
 # MAIN
@@ -94,4 +107,4 @@ def generator(lang, mode):
 
 
 user_info = main_interface()
-generator(user_info[0], user_info[1])
+gen(user_info[0], user_info[1])
