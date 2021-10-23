@@ -1,2 +1,10 @@
-vilain 1
-computeru -1
+
+sage 1
+bien-aimé 1
+lutter 1
+engagé -1
+aches -1
+orders 1
+jocks -1
+scheme 1
+wary -1
