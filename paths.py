@@ -1,16 +1,11 @@
 # ======================================================================================================================
-# IMPORTS
-# ======================================================================================================================
-
-
-# ======================================================================================================================
 # CLASS
 # ======================================================================================================================
 
 
 class Path:
     """
-    Class which defines english propreties
+    Class which defines english properties
     """
 
     def __init__(self, path):
@@ -63,7 +58,6 @@ class Path:
     def french_words(self):
         """
         Creating the frenchWords list
-        :param lang: str, language
         :return: french_words, list
         """
         LIST = open(self.path + "/frenchWords.txt", "r", encoding="utf-8")
@@ -71,4 +65,3 @@ class Path:
         LIST.close()
 
         return french_words
-
