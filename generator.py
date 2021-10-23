@@ -17,9 +17,9 @@ class Generator:
     Class which defines a generator
     """
 
-    def __init__(self, language, gamemode):
+    def __init__(self, language, game_mode):
         self.lang = language
-        self.gamemode = gamemode
+        self.game_mode = game_mode
         self.path = language + "Package"
 
         new_path = paths.Path(self.path)
@@ -43,34 +43,37 @@ class Generator:
     def choose_word(self):
         """
         Generates the word to guess
-        :return duo: tuple
+        :return word_to_guess: tuple
         """
         while True:
 
             word_to_guess = random.choice(self.words_list)
 
-            if word_to_guess[0] not in self.acquired_words and self.gamemode == "french":  # if gamemode is french and the word is not acquired
+            # if game_mode is french and the word is not acquired
+            if word_to_guess[0] not in self.acquired_words and self.game_mode == "french":
                 break
-            elif word_to_guess[1] not in self.acquired_words and self.gamemode != "french":  # if gamemode is foreign and the word is not acquired
+
+            # if game_mode is foreign and the word is not acquired
+            elif word_to_guess[1] not in self.acquired_words and self.game_mode != "french":
                 break
 
         return word_to_guess
 
-    def add_in_progress_file_writing(self, toWrite):
+    def add_in_progress_file_writing(self, to_write):
         """
         Writing a piece of information in the in_progress file
-        :param toWrite: new to add
+        :param to_write: new to add
         """
         obj = methods.Method("inProgressWords.txt", self.path)
-        obj.add_in_file(toWrite + "\n")
+        obj.add_in_file(to_write + "\n")
 
-    def add_acquired_file_writing(self, toWrite):
+    def add_acquired_file_writing(self, to_write):
         """
         Writing a piece of information in the acquired file
-        :param toWrite: new to add
+        :param to_write: new to add
         """
         obj = methods.Method("acquiredWords.txt", self.path)
-        obj.add_in_file(toWrite + "\n")
+        obj.add_in_file(to_write + "\n")
 
     def delete_in_progress_file(self, guessed_word):
         """
@@ -84,19 +87,19 @@ class Generator:
 
         return new_progress_list
 
-    def answers_counter(self, word_to_guess, learning_statut):
+    def answers_counter(self, word_to_guess, learning_status):
         """
         Count right / wrong answers
         :param word_to_guess: word to guess, str
-        :param learning_statut: bool
+        :param learning_status: bool
         """
-        in_progress_words = [elt.split(" ")[0] for elt in self.in_progress_list ]
+        in_progress_words = [elt.split(" ")[0] for elt in self.in_progress_list]
         in_progress_count = [elt.split(" ")[-1] for elt in self.in_progress_list]
 
         if word_to_guess in in_progress_words:  # if the word has already been proposed
             index = in_progress_words.index(word_to_guess)
 
-            if learning_statut:  # if the translation is correct
+            if learning_status:  # if the translation is correct
                 in_progress_count[index] = str(int(in_progress_count[index]) + 1)
 
                 if int(in_progress_count[index]) == 10:
@@ -112,9 +115,8 @@ class Generator:
 
             print("(" + str(int(in_progress_count[index])) + " / 10)")
 
-
         else:  # if the word is proposed for the first time
-            if learning_statut:
+            if learning_status:
                 new_word = word_to_guess + " " + "1"
                 print("(1 / 10)")
             else:
