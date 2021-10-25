@@ -26,6 +26,7 @@ class Method:
         Writing in a file
         :return:
         """
-        file = open(self.path + "/" + self.file + "\n", "r", encoding="utf-8")
-        file.write(to_write)
+        file = open(self.path + "/" + self.file, "w", encoding="utf-8")
+        for elt in to_write:
+            file.write(elt)
         file.close()
