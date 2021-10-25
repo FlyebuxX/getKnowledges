@@ -27,8 +27,6 @@ class Generator:
         self.words_list = new_path.words_list()
         self.in_progress_list = new_path.in_progress_list()
         self.acquired_words = new_path.acquired_words()
-        self.foreign_words = new_path.foreign_words(self.lang)
-        self.french_words = new_path.french_words()
 
     def files(self):
         """
@@ -37,14 +35,15 @@ class Generator:
         self.words_list = loadings.words_list_file_loading(self.words_list)
         self.in_progress_list = loadings.file_loading(self.in_progress_list)
         self.acquired_words = loadings.file_loading(self.acquired_words)
-        self.foreign_words = loadings.file_loading(self.foreign_words)
-        self.french_words = loadings.file_loading(self.french_words)
 
     def choose_word(self):
         """
         Generates the word to guess
         :return word_to_guess: tuple
         """
+        self.__init__(self.lang, self.game_mode)
+        self.files()
+
         while True:
 
             word_to_guess = random.choice(self.words_list)
@@ -93,8 +92,11 @@ class Generator:
         :param word_to_guess: word to guess, str
         :param learning_status: bool
         """
-        in_progress_words = [elt.split(" ")[0] for elt in self.in_progress_list]
-        in_progress_count = [elt.split(" ")[-1] for elt in self.in_progress_list]
+        self.__init__(self.lang, self.game_mode)
+        self.files()
+
+        in_progress_words = [elt.split(" ")[0] for elt in self.in_progress_list]  # list of words in progress
+        in_progress_count = [elt.split(" ")[-1] for elt in self.in_progress_list]  # counter
 
         if word_to_guess in in_progress_words:  # if the word has already been proposed
             index = in_progress_words.index(word_to_guess)
@@ -102,15 +104,17 @@ class Generator:
             if learning_status:  # if the translation is correct
                 in_progress_count[index] = str(int(in_progress_count[index]) + 1)
 
-                if int(in_progress_count[index]) == 10:
+                if int(in_progress_count[index]) == 5:  # if acquired
                     self.add_acquired_file_writing(word_to_guess)
                     self.delete_in_progress_file(word_to_guess)
 
                 else:
+                    self.delete_in_progress_file(word_to_guess)
                     self.add_in_progress_file_writing(in_progress_words[index] + " " + in_progress_count[index])
 
             else:
-                in_progress_count[index] = str(int(in_progress_count[index][1]) - 1)
+                in_progress_count[index] = str(int(in_progress_count[index]) - 1)
+                self.delete_in_progress_file(word_to_guess)
                 self.add_in_progress_file_writing(in_progress_words[index] + " " + in_progress_count[index])
 
             print("(" + str(int(in_progress_count[index])) + " / 10)")
